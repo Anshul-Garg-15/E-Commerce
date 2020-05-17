@@ -35,3 +35,19 @@ module.exports.list = async function(req,res){
         products: products
     });
 }
+
+//Delete the product from products list
+module.exports.delete = async function(req,res){
+    try{
+        let product = await Product.findById(req.params.id);
+        product.remove();
+        
+        return res.json(200,{
+            message: "Product deleted"
+        });
+    }catch(err){
+        return res.json(500,{
+            message: "Internal Server Error"
+        });
+    }   
+}
