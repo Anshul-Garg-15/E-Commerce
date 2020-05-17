@@ -25,3 +25,13 @@ module.exports.create = async function(req,res){
     
 }
 
+//render list of products
+module.exports.list = async function(req,res){
+
+    let products = await Product.find({});
+    
+    return res.json(200,{
+        message: "List of Products",
+        products: products
+    });
+}
