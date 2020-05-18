@@ -13,6 +13,6 @@ router.get('/', productApi.list);
 router.delete('/:id',productApi.delete);
 
 //to update the quantity of product
-router.post('/:id/update_quantity/:number' , productApi.update)
+router.post('/:id/update_quantity/' , productApi.update)
 
 module.exports = router;
